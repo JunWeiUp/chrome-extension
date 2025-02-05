@@ -1,10 +1,8 @@
 # edge-extensions-password
 edge浏览器插件，密码管理器
 
-[密码管理器 - Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/calbgkmccbdhjeclopclefheknmikpkg)
 
 
-<img width="492" alt="Snipaste_2025-01-03_16-49-15" src="https://github.com/user-attachments/assets/26184602-91ff-4ac4-a97a-73a8789a7295" />
 
 
 
