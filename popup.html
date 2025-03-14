@@ -11,23 +11,7 @@
         <span class="url-label">当前网址：</span>
         <span id="currentUrlDisplay"></span>
       </div>
-      <div class="actions">
-        <button id="togglePasswords">显示密码</button>
-        <button id="linkSites">关联站点</button>
-        <button id="exportData">导出</button>
-        <button id="importData">导入</button>
-        <button id="openOptions">管理密码</button>
-        <div class="danger-actions">
-          <button id="clearCurrent" class="btn-warning">清除当前</button>
-          <button id="clearAll" class="btn-danger">清除所有</button>
-        </div>
-        <input
-          type="file"
-          id="importFile"
-          accept=".json"
-          style="display: none"
-        />
-      </div>
+  
 
       <div class="main-content">
         <div class="input-section">
@@ -36,8 +20,10 @@
               <input type="text" id="username" placeholder="用户名" />
             </div>
             <div class="input-wrapper">
-              <input type="password" id="password" placeholder="密码" />
-              <button class="toggle-password" type="button">👁</button>
+              <input type="password" id="password" placeholder="密码">
+              <button id="copyPasswordBtn">复制</button>
+              <button id="togglePasswordVisibilityBtn">显示密码</button>
+              <button id="generatePasswordBtn">生成随机</button>
             </div>
             <div class="input-wrapper">
               <input type="text" id="note" placeholder="备注（选填）" />

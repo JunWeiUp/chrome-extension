@@ -90,12 +90,12 @@ input {
 
 /* 修改密码输入框右侧padding，为图标留出空间 */
 input[type="password"] {
-  padding-right: 40px;
+  padding-right: 120px;
 }
 
 .toggle-password {
   position: absolute;
-  right: 10px;
+  right: 50px;
   top: 50%;
   transform: translateY(-50%);
   background: none;
@@ -110,6 +110,48 @@ input[type="password"] {
   align-items: center;
   justify-content: center;
   z-index: 1;
+}
+
+.generate-password,
+.copy-password,
+.generate-random {
+  position: absolute;
+  /* 修改生成密码、复制密码和随机生成按钮的右侧间距 */
+  .button-group {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  align-items: center;
+}
+
+.generate-password,
+.copy-password,
+.generate-random {
+  position: static;
+  transform: none;
+}
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.generate-password:hover,
+.copy-password:hover {
+  color: #339af0;
 }
 
 .toggle-password:hover {
@@ -165,12 +207,41 @@ input[type="password"] {
 
 .btn {
   flex: 1;
-  font-size: 12px;
-  padding: 4px 8px;
+  font-size: 14px;
+  padding: 6px 12px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   color: white;
+  transition: background-color 0.2s ease;
+}
+
+.btn-fill {
+  background-color: #28a745;
+}
+
+.btn-fill:hover {
+  background-color: #218838;
+}
+
+.btn-edit {
+  background-color: #007bff;
+}
+
+.btn-edit:hover {
+  background-color: #0069d9;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+.button-group {
+  display: flex;
+  gap: 10px;
 }
 
 .btn i {
@@ -438,4 +509,4 @@ input[type="password"] {
 
 #openOptions:hover {
   background-color: #f76707;
-} 
+}

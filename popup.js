@@ -561,6 +561,46 @@ function isVisible(element) {
     }
 }
 
+  document.getElementById('generatePasswordBtn').addEventListener('click', function() {
+    const password = generateRandomPassword();
+    document.getElementById('password').value = password;
+  });
+
+  function generateRandomPassword(length = 12) {
+    const lowercase = 'abcdefghijklmnopqrstuvwxyz';
+    const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const numbers = '0123456789';
+    const symbols = '!@#$%^&*()_+-=[]{}|;:,./<>?';
+    const charset = lowercase + uppercase + numbers + symbols;
+    let password = '';
+    password += lowercase[Math.floor(Math.random() * lowercase.length)];
+    password += uppercase[Math.floor(Math.random() * uppercase.length)];
+    password += numbers[Math.floor(Math.random() * numbers.length)];
+    password += symbols[Math.floor(Math.random() * symbols.length)];
+    for (let i = 4; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * charset.length);
+      password += charset[randomIndex];
+    }
+    password = password.split('').sort(() => Math.random() - 0.5).join('');
+    return password;
+  }
+
+  const copyPasswordBtn = document.getElementById('copyPasswordBtn');
+  const togglePasswordVisibilityBtn = document.getElementById('togglePasswordVisibilityBtn');
+  const passwordInput = document.getElementById('password');
+  copyPasswordBtn.addEventListener('click', function() {
+    passwordInput.select();
+    document.execCommand('copy');
+  });
+  togglePasswordVisibilityBtn.addEventListener('click', function() {
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      this.textContent = '隐藏密码';
+    } else {
+      passwordInput.type = 'password';
+      this.textContent = '显示密码';
+    }
+  });
 // 导出数据
 document.getElementById('exportData').addEventListener('click', function() {
   chrome.storage.local.get(null, function(data) {
@@ -658,4 +698,3 @@ function getMessage(messageName, substitutions = null) {
 document.getElementById('togglePasswords').textContent = getMessage('showPassword');
 document.getElementById('linkSites').textContent = getMessage('linkSites');
 document.getElementById('exportData').textContent = getMessage('export');
-// ... 其他文本替换 
